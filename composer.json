@@ -1,0 +1,23 @@
+{
+    "name": "villa/bienes-raices",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Andrés Nehuel",
+            "email": "villagraandres00@gmail.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.7"
+    },
+    "autoload": {
+    "psr-4": {
+        "Model\\":"./models",
+        "MVC\\" : "./",
+        "Controllers\\" : "./controllers"
+
+        
+               
+    }        
+    }
+}
