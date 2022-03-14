@@ -10,7 +10,7 @@
 
     <?php endforeach?>
 
-    <form class="formulario" method="POST"  enctype="multipart/form-data">
+    <form class="formulario" method="POST"  enctype="multipart/form-data" action="/vendedor/crear">
         <?php include __DIR__. '/formulario.php' ?>
 
         <input type="submit" value="Registrar vendedor" class="boton-verde">

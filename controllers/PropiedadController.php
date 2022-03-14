@@ -4,14 +4,16 @@ namespace Controllers;
 use MVC\Router;
 use Model\propiedad;
 use Model\vendedor;
+use Model\blog;
 use Intervention\Image\ImageManagerStatic as Image;
 
 
 class PropiedadController{
     public static function index(Router $router){
        $propiedades=propiedad::all();
-
       $vendedores=vendedor::all();
+      $blogs=blog::all();
+      
 
 
        $resultado = $_GET['resultado'] ?? null;
@@ -19,7 +21,8 @@ class PropiedadController{
        $router->render('propiedades/admin',[
           'propiedades'=>$propiedades,
           'resultado'=>$resultado,
-          'vendedores'=>$vendedores
+          'vendedores'=>$vendedores,
+          'blogs'=>$blogs
        ]);
     }
     public static function crear(Router $router){
@@ -39,7 +42,7 @@ class PropiedadController{
      //Realiza una resize a la img 
      if ($_FILES['propiedad']['tmp_name']['imagen']) {
        $Image=Image::make($_FILES['propiedad']['tmp_name']['imagen'])->fit(800,600);
-       $propiedad->setImagen($nombreImagen);
+       $propiedad->setImagen($nombreImagen,CARPETA_IMAGENES);
      }
 
  
@@ -102,7 +105,7 @@ class PropiedadController{
             
             if ($_FILES['propiedad']['tmp_name']['imagen']) {
                 $Image=Image::make($_FILES['propiedad']['tmp_name']['imagen'])->fit(800,600);
-                $propiedad->setImagen($nombreImagen);
+                $propiedad->setImagen($nombreImagen,CARPETA_IMAGENES);
               } 
         
         

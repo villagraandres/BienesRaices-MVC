@@ -56,11 +56,49 @@ class VendedorController{
         ]);
     }
 
-    public static function actualizar(){
-        echo "actualizar vendedor";
+    public static function actualizar(Router $router){
+
+        $id=valirRedireccionar('/admin');
+        $vendedor= vendedor::find($id);
+        $errores=vendedor::getErroes();
+        
+        if($_SERVER['REQUEST_METHOD']==='POST'){
+            //Asignar valores
+            $args=$_POST['vendedor'];
+            
+            $vendedor->sincronizar($args);
+            
+            //Validacion
+            $errores=$vendedor->validar();
+            
+            if (empty($errores)) {
+                $vendedor->guardar();
+            }
+            
+            }
+            
+        $router->render('vendedores/actualizar',[
+            'errores'=>$errores,
+            'vendedor'=>$vendedor
+        ]);
+
     }
     public static function eliminar(){
-        echo "eliminar vendedor";
+       if ($_SERVER['REQUEST_METHOD']==='POST') {
+          
+         
+
+           //validar el id
+           $id=$_POST['id'];
+           $id=filter_var($id,FILTER_VALIDATE_INT);
+           if ($id) {
+            $tipo=$_POST['tipo'];
+            if(validarContenido($tipo)){
+                $vendedor=vendedor::find($id);
+                $vendedor->eliminar();
+            }
+           }
+       }
     }
 
 }

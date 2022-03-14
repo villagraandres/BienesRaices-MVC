@@ -115,11 +115,14 @@ class ActiveRecord {
 
  }
  //Subida de archivos
- public function setImagen($imagen){
+ public function setImagen($imagen,$ruta){
     
      //Elimina la imagen previa
-     if (!is_null($this->id)) {
-        $this->borrarImagen();
+     if ($this->id) {
+        $existeArchivo=file_exists($ruta.$this->imagen);
+        if ($existeArchivo) {
+            unlink($ruta.$this->imagen);
+        }
      }
    
 

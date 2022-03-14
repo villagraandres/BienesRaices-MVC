@@ -6,6 +6,7 @@ define('CARPETA_IMAGENES',$_SERVER['DOCUMENT_ROOT'].'/imagenes/');
 define('CARPETA_IMAGENES_BLOG',__DIR__.'/../imagenesBlog/');
  */
 define('CARPETA_IMAGENES_VENDEDOR',$_SERVER['DOCUMENT_ROOT'].'/imagenesVendedor/');
+define('CARPETA_IMAGENES_BLOG',$_SERVER['DOCUMENT_ROOT'].'/imagenesBlog/');
 
 
 function incluirTemplate( string $nombre, bool $inicio=false){
