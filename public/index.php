@@ -32,7 +32,7 @@ $router->get('/blog/crear',[BlogController::class,'crear']);
 $router->post('/blog/crear',[BlogController::class,'crear']);
 $router->get('/blog/actualizar',[BlogController::class,'actualizar']);
 $router->post('/blog/actualizar',[BlogController::class,'actualizar']);
-$router->get('/blog/eliminar',[BlogController::class,'eliminar']);
+$router->post('/blog/eliminar',[BlogController::class,'eliminar']);
 $router->get('/blog/ver',[BlogController::class,'ver']);
 
 

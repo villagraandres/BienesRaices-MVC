@@ -42,7 +42,7 @@ function s($html):string{
 }
 //Validar tipo de contenido
 function validarContenido($tipo){
-$tipos=['vendedor','propiedad'];
+$tipos=['vendedor','propiedad','blog'];
 return in_array($tipo,$tipos);
 }
 

@@ -72,13 +72,13 @@ class ActiveRecord {
  }
 
  
- public function eliminar(){
+ public function eliminar($ruta){
     //elimina propiedad
    $query="DELETE FROM ". static::$tabla." WHERE id=". self::$db->escape_string($this->id) ." LIMIT 1";
    $resultado=self::$db->query($query);
 
    if ($resultado) {
-       $this->borrarImagen();
+       $this->borrarImagen($ruta);
        if ($resultado) {
            header('location:/admin?resultado=3 ');
          }
@@ -133,11 +133,11 @@ class ActiveRecord {
 
  //Elimina el archivo
 
- public function borrarImagen(){
+ public function borrarImagen($ruta){
      //Comprobar si existe
-     $existeArchivo=file_exists(CARPETA_IMAGENES.$this->imagen);
+     $existeArchivo=file_exists($ruta.$this->imagen);
      if ($existeArchivo) {
-         unlink(CARPETA_IMAGENES.$this->imagen);
+         unlink($ruta.$this->imagen);
      }
  }
 

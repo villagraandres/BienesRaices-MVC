@@ -92,7 +92,16 @@
           
           <a href="/blog/actualizar?id=<?php  echo $blog->id; ?>" class="boton-amarillo-block">Actualizar</a>
           <a href="/blog/ver?id=<?php  echo $blog->id; ?>" class="boton-amarillo-block">Ver</a>
-          <a href="/admin/blog/eliminar.php?id=<?php  echo $blog->id; ?>" class="boton-rojo-block">Eliminar</a>
+         <form method="POST" class="w-100" action="/blog/eliminar">
+
+        <input type="hidden" name="id" value="<?php echo $blog->id;?>">
+        <input type="hidden" name="tipo" value="blog">
+
+
+
+
+          <input type="submit"  class="boton-rojo-block" value="Eliminar"></input>
+          </form>
         </td>
       </tr>
       <?php endforeach;?>
@@ -108,7 +117,7 @@
         <th>ID</th>
         <th>Nombre</th>
         <th>Telefono</th>
-        <th>Imagen</th>
+        
         <th>Acciones</th>
     
       </tr>
@@ -120,7 +129,7 @@
         <td><?php echo $vendedor->id ;   ?></td>
         <td><?php echo $vendedor->vendedores." ".$vendedor->apellidos ;  ?></td>
         <td><?php echo  $vendedor->telefono?></td>
-        <td> <img src="/imagenesVendedor/<?php echo $vendedor->imagen ?>" class="imagen-tabla"> </td>
+       
         
         <td>
           <form method="POST" class="w-100" action="/vendedor/eliminar">

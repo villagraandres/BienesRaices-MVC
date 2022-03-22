@@ -161,7 +161,7 @@ class PropiedadController{
            if (validarContenido($tipo)) {
             $propiedad=propiedad::find($id);
        
-            $propiedad->eliminar();
+            $propiedad->eliminar(CARPETA_IMAGENES);
            }
        
        
