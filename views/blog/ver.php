@@ -21,7 +21,7 @@ $blog=blog::find($id);
     </div>      
        
    
-    <p class="informacion-meta">Escrito el <span><?php echo $blog->creado?> </span>por: <span><?php echo $blog->creado?></span></p>
+    <p class="informacion-meta">Escrito el <span><?php echo $blog->creado?> </span>por: <span><?php echo $blog->autor?></span></p>
 
     <div class="resumen-propiedad">
         

@@ -97,7 +97,7 @@ class PropiedadController{
         
             $propiedad->sincronizar($args);
         
-            
+            debugear($propiedad);
             //Validacion   
             $errores=$propiedad->validar();
             //Nombre de la img

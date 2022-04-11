@@ -34,4 +34,4 @@
     </div>
     </section>
 
-</ma
+</main>

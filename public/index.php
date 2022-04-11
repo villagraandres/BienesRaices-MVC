@@ -3,6 +3,7 @@
 require_once __DIR__.'/../includes/app.php';
 
 use Controllers\BlogController;
+use Controllers\LoginController;
 use MVC\Router;
 use Controllers\PropiedadController;
 use Controllers\VendedorController;
@@ -36,15 +37,24 @@ $router->post('/blog/eliminar',[BlogController::class,'eliminar']);
 $router->get('/blog/ver',[BlogController::class,'ver']);
 
 
-
+//Zona publica
 $router->get('/',[PaginasController::class,'index']);
 $router->get('/nosotros',[PaginasController::class,'nosotros']);
 $router->get('/propiedades',[PaginasController::class,'propiedades']);
 $router->get('/propiedad',[PaginasController::class,'propiedad']);
 $router->get('/blog',[PaginasController::class,'blog']);
+$router->get('/blogAll',[PaginasController::class,'blogAll']);
 $router->get('/entrada',[PaginasController::class,'entrada']);
 $router->get('/contacto',[PaginasController::class,'contacto']);
 $router->post('/contacto',[PaginasController::class,'contacto']);
+
+
+
+//Login y autenticacion
+
+$router->get('/login',[LoginController::class,'login']);
+$router->post('/login',[LoginController::class,'login']);
+$router->get('/logout',[LoginController::class,'logout']);
 
 
 $router->comprobarURL();

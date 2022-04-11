@@ -1,4 +1,4 @@
-<div class="contenedor-anuncios">
+<div class="contenedor-anuncios" data-cy="departamentos">
      <?php foreach($propiedades as $propiedad){?>
             <div class="anuncio">
                     <div class="entradaContenedor">
@@ -27,9 +27,7 @@
                             <p><?php echo $propiedad->habitaciones?></p>
                         </li>
                     </ul>
-                    <a href="/propiedad?id=<?php echo $propiedad->id?>" class="boton-amarillo-block">
-                        Ver Propiedad
-                    </a>
+                    <a data-cy="enlace-propiedad" href="/propiedad?id=<?php echo $propiedad->id?>" class="boton-amarillo-block">Ver Propiedad</a>
                 </div> <!-- contenido anuncio -->
             </div><!-- anuncio -->
           <?php }?>

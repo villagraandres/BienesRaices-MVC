@@ -1,11 +1,11 @@
 <main class="contenedor seccion">
-        <h1>Más Sobre Nosotros</h1>
+        <h2 data-cy="heading-nosotros">Más Sobre Nosotros</h2>
 
         <?php include 'iconos.php'?>
     </main>
 
     <section class="seccion contenedor">
-        <h2>Casas y Departamentos en Venta</h2>
+        <h2  data-cy="heading-venta">Casas y Departamentos en Venta</h2>
 
         <?php 
 
@@ -14,20 +14,20 @@
         ?>
 
         <div class="alinear-derecha">
-            <a href="/propiedades" class="boton-verde">Ver Todas</a>
+            <a data-cy="ver-propiedades" href="/propiedades" class="boton-verde">Ver Todas</a>
         </div>
     </section>
 
   
-    <section class="imagen-contacto">
+    <section data-cy="imagen-contacto" class="imagen-contacto">
         <h2>Encuentra la casa de tus sueños</h2>
         <p>Llena el formulario de contacto y un asesor se pondrá en contacto contigo a la brevedad</p>
-        <a href="contacto.php" class="boton-amarillo">Contactános</a>
+        <a href="/contacto" class="boton-amarillo">Contactános</a>
     </section>
 
 
     <div class="contenedor seccion seccion-inferior">
-        <section class="blog">
+        <section data-cy="blog" class="blog">
             <h3>Nuestro Blog</h3>
 
             <?php 
@@ -37,7 +37,7 @@
 
         </section>
 
-        <section class="testimoniales">
+        <section data-cy="testimoniales" class="testimoniales">
             <h3>Testimoniales</h3>
 
             <div class="testimonial">

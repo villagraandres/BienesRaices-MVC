@@ -36,24 +36,25 @@ if (!isset($inicio)) {
                 </div>
                 <div class="derecha">
                     <img class="dark-boton" src="/build/img/dark-mode.svg">
-                    <nav class="navegacion">
+                    <nav data-cy="navegacion-header" class="navegacion">
                         <a href="/nosotros">Nosotros</a>
-                        <a href="/propiedades">Anuncios</a>
-                        <a href="/blog">Blog</a>
+                        <a href="/propiedades">Propiedades</a>
+                        <a href="/blogAll">Blog</a>
                         <a href="/contacto">Contacto</a>
                         <?php if(!$auth ):?>
-                            <a href="login.php">Iniciar Sesión</a>
+                            <a href="/login">Iniciar Sesión</a>
                         <?php endif;?>
                         <?php if($auth ):?>
-                            <a href="/cerrar-sesion.php">Cerrar Sesión</a>
+                            <a href="/logout">Cerrar Sesión</a>
                         <?php endif;?>
+                      
                     </nav>
                   
                 </div>
             </div><!-- barra -->
            <?php
            if ($inicio) {
-               echo "<h1>Venta de Casas y Departamentos </h1>";
+               echo "<h1 data-cy='heading-sitio'>Venta de Casas y Departamentos </h1>";
            }
            
            ?>
@@ -67,17 +68,18 @@ if (!isset($inicio)) {
 
     <footer class="footer seccion">
         <div class="contenedor contenedor-footer">
-            <nav class="navegacion">
-                <a href="index.php">Inicio</a>
-                <a href="nosotros.php">Nosotros</a>
-                <a href="anuncios.php">Anuncios</a>
-                <a href="blog.php">Blog</a>
-                <a href="contacto.php">Contacto</a>
+            <nav data-cy="navegacion-footer" class="navegacion">
+                <a href="/">Inicio</a>
+                <a href="/nosotros">Nosotros</a>
+                <a href="/propiedades">Propiedades</a>
+                <a href="/blogAll">Blog</a>
+                <a href="/contacto">Contacto</a>
+                
             </nav>
 
         </div>
 
-        <p class="copy">Todos los derechos reservados <?php echo date('Y')?> &copy;</p>
+        <p data-cy="copy" class="copy">Todos los derechos reservados <?php echo date('Y')?> &copy;</p>
     </footer>
    <script src="../build/js/bundle.min.js"></script>
 </body>

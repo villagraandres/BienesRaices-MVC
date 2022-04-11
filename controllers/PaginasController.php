@@ -36,10 +36,17 @@ class PaginasController{
         ]);
     }
     public static function blog(Router $router){
-        $id=valirRedireccionar('/');
+        $id=valirRedireccionar('/');    
         $blog=blog::find($id);
         $router->render('paginas/entrada',[
             'blog'=>$blog
+        ]);
+    }
+
+    public static function blogAll(Router $router){
+        $blog=blog::all();
+        $router->render('paginas/blogAll',[
+            'blogs'=>$blog
         ]);
     }
   

@@ -13,6 +13,16 @@ class Router{
     }
 
     public function comprobarURL(){
+
+        session_start();
+        $auth=$_SESSION['login'] ?? null;
+
+        
+        //Arreglo de rutas protegidas
+
+        $rutas_protegidas= ['/admin','/propiedades/crear','/propiedades/actualizar','/propiedades/eliminar,','/vendedor/crear','/vendedor/actualizar','/vendedor/eliminar'];
+
+
         $urlActual=$_SERVER['PATH_INFO'] ?? '/';
         $metodo= $_SERVER['REQUEST_METHOD'];
      
@@ -21,6 +31,13 @@ class Router{
         }else{
             
             $fn= $this->rutasPOST[$urlActual] ?? null;
+        }
+        //Proteger las rutas
+        //Reisamos si la url actual esta en el arreglo de rutas protegidas
+        //Le pasas un string al arreglo de rutas protegidas
+        if (in_array($urlActual,$rutas_protegidas) && !$auth ) {
+           header('Location: /');
+           
         }
         if ($fn) {
            //La url existe
