@@ -28,7 +28,7 @@ class VendedorController{
              //Realiza una resize a la img 
              if ($_FILES['vendedor']['tmp_name']['imagen']) {
                $Image=Image::make($_FILES['vendedor']['tmp_name']['imagen'])->fit(800,600);
-               $vendedor->setImagen($nombreImagen);
+               $vendedor->setImagen($nombreImagen,CARPETA_IMAGENES_VENDEDOR);
              }
            
              $errores=$vendedor->validar();
@@ -43,7 +43,7 @@ class VendedorController{
                  
                
                     //Guarda en el disco duro
-                  $Image->save(CARPETA_IMAGENES_VENDEDOR.$nombreImagen);
+                 /*  $Image->save(CARPETA_IMAGENES_VENDEDOR.$nombreImagen); */
                 $vendedor->guardar();
             }
         

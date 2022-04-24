@@ -72,7 +72,11 @@ class propiedad extends ActiveRecord{
     return self::$errores;
 }
 
-
+public function insertar(){
+   $query=  " INSERT INTO usuarios ( nombre, apellido, email, contraseña, telefono, confirmado, token ) VALUES (' Andrés Nehuel', 'Villagra', 'villagraandres00@gmail.com', 'dasdasdadasdasd', '8125976580',  '0', '6260be4514508 ') ";
+ $resultado = self::$db->query($query);
+   debugear($resultado);
+ }
 }
 
   
